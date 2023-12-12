@@ -1,4 +1,4 @@
-name : str = "Tariq Maqbool "
+name : str = "Tariq Maqbool"
 f_name : str = "Maqbool Hussain"
 age : int = 30
 print("Result with old style: ")
