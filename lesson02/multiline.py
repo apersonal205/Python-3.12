@@ -90,3 +90,69 @@ print(f"My List (Updated) :{my_list}")
 my_list.insert(2,"3")
 my_list.pop(10)
 print(f"My List (Updated) :{my_list}")
+
+
+# List Functions    
+my_list : list[str] = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
+print(f"My List :{my_list}")
+print(f"Pop (remove) Index 1: {my_list.pop(2)}")
+print(f"My List (Updated) :{my_list}")
+my_list.append("3")
+print(f"My List (Updated) :{my_list}")
+my_list.insert(2,"3")
+my_list.pop(10)
+print(f"My List (Updated) :{my_list}")
+new_list : list[str] = ["1011","1012","1013"]
+my_list.extend(new_list)
+print(f"My List (Extended) :{my_list}")
+
+
+# Loop Iteration Standard   
+
+members : list [str] = ["Tariq", "Maqbool", "Nadeem", "Fahim","Ali"]
+
+for member in members:
+    print(f"Name: {member}")
+print ("-------")
+for member in members[1:2:1]:
+    print(f"Name: {member}")
+    
+print ("-------")
+for t in range(1,11,1):
+    print(f"2 x {t} = {2*t}")
+    
+
+# Tuple List  & Comperhansive List
+from typing import Union
+pretype = Union[str,float,int]
+
+members : tuple [pretype] = ["Tariq", ["Nadeem", 65, 1], 1980, 5.5]
+print("PreType List or Tuple by Union")
+for member in members:
+    print(f"Name: {member}")
+
+members[1].append("20")
+print("------")
+print(f"Member list (Updated): {members}")
+print("------")
+print(f"Comperhansive List:")
+
+
+student : Union[str,int] = "Tariq",30,110.2
+print(student)
+
+
+# Zip and Unzip 
+
+from typing import Any
+members : list [str] = ["Tariq", "Maqbool", "Nadeem", "Fahim","Ali","AA"]
+member_age : list[int] = [40, 50, 70, 55,23,32]
+member_data : list[Any] = list(zip(members, member_age)) #Generator Function 
+
+for member in member_data:
+    print(f"Name: {member}")
+    
+print(f"Complete list: {member_data}")
+
+print(f"--------------\nSorted by age: {sorted(member_data, key=lambda x:x[1])}")
+print(f"--------------\nSorted by Name: {sorted(member_data, key=lambda x:x[0])}")
