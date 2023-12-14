@@ -1,4 +1,6 @@
 import pandas as pd
+from typing import Union,Any
+
 
 emp_detail : str = """
 print("My Name is Tariq")
@@ -123,7 +125,7 @@ for t in range(1,11,1):
     
 
 # Tuple List  & Comperhansive List
-from typing import Union
+
 pretype = Union[str,float,int]
 
 members : tuple [pretype] = ["Tariq", ["Nadeem", 65, 1], 1980, 5.5]
@@ -144,7 +146,7 @@ print(student)
 
 # Zip and Unzip 
 
-from typing import Any
+
 members : list [str] = ["Tariq", "Maqbool", "Nadeem", "Fahim","Ali","AA"]
 member_age : list[int] = [40, 50, 70, 55,23,32]
 member_data : list[Any] = list(zip(members, member_age)) #Generator Function 
