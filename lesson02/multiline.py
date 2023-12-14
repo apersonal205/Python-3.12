@@ -158,3 +158,63 @@ print(f"Complete list: {member_data}")
 
 print(f"--------------\nSorted by age: {sorted(member_data, key=lambda x:x[1])}")
 print(f"--------------\nSorted by Name: {sorted(member_data, key=lambda x:x[0])}")
+
+
+#Dictionary Object
+
+from typing import Dict
+
+
+Key = Union [int, str]
+Value = Union[int,str,list,tuple,set,dict]
+
+data : Dict[Key,Value] = {
+                        "fname" : "Tariq",
+                        "lname" : "Maqbool",
+                        "edu" : "Bs-Computer Science",
+                        "age" : [1,2,3,4]
+                        }
+print(data)
+
+
+# Example Dictionary of Books in a Library
+library_books = {
+    '001': {'title': 'Tariq Maqbool', 'author': 'Harper Lee', 'year': 1960, 'copies': 5},
+    '002': {'title': 'Rizwan', 'author': 'George Orwell', 'year': 1949, 'copies': 3},
+    '003': {'title': 'Muhammad', 'author': 'J.R.R. Tolkien', 'year': 1937, 'copies': 8},
+}
+
+# Accessing Information
+isbn_to_check = '001'
+if isbn_to_check in library_books:
+    book_info = library_books[isbn_to_check]
+    print(f"Book Title: {book_info['title']}")
+    print(f"Author: {book_info['author']}")
+    print(f"Year of Publication: {book_info['year']}")
+    print(f"Available Copies: {book_info['copies']}")
+else:
+    print(f"Book with ISBN {isbn_to_check} not found in the library.")
+
+
+# Adding a New Book
+new_book_isbn = '004'
+library_books[new_book_isbn] = {'title': 'Nadeem', 'author': 'Khaled Hosseini', 'year': 2003, 'copies': 6}
+
+# Updating Information
+isbn_to_update = '002'
+if isbn_to_update in library_books:
+    library_books[isbn_to_update]['copies'] += 2  # Adding 2 more copies
+
+# Removing a Book
+isbn_to_remove = '002'
+if isbn_to_remove in library_books:
+    del library_books[isbn_to_remove]
+
+# Displaying Updated Library
+print("\nUpdated Library:")
+for isbn, book_info in library_books.items():
+    print(f"\nISBN: {isbn}")
+    print(f"Book Title: {book_info['title']}")
+    print(f"Author: {book_info['author']}")
+    print(f"Year of Publication: {book_info['year']}")
+    print(f"Available Copies: {book_info['copies']}")
